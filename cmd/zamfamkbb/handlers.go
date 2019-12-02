@@ -1,5 +1,3 @@
-//Credit: https://lets-go.alexedwards.net/
-
 package main
 
 import (
@@ -25,3 +23,5 @@ func home(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Internal Server Error", 500)
 	}
 }
+
+//Credit: https://lets-go.alexedwards.net/
