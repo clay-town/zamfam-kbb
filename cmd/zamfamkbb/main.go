@@ -14,6 +14,7 @@ func main() {
 	mux.Handle("/static/", http.StripPrefix("/static", fs))
 	mux.HandleFunc("/", home)
 	mux.HandleFunc("/make", returnMakes)
+	mux.HandleFunc("/model", returnModels)
 	godotenv.Load()
 	log.Println("Starting server on :"+os.Getenv("PORT"))
 	err := http.ListenAndServe(":"+os.Getenv("PORT"), mux)
