@@ -14,9 +14,9 @@ function fetchMakes(year=1992) {
   request.send();
 }
 
-function fetchModels(makeId=18) {
+function fetchModels(makeid=18) {
   var request = new XMLHttpRequest();
-  var url = "/model?makeid="+makeId;
+  var url = "/model?makeid="+makeid;
 
   request.open('POST', url, true);
   request.onload = function(){
