@@ -13,7 +13,8 @@ import (
 func returnTrims(w http.ResponseWriter, r *http.Request) {
 	godotenv.Load()
 	modelid := r.URL.Query().Get("modelid")
-	url := "https://sandbox.api.kbb.com/idws/vehicle/trims?api_key="+os.Getenv("APIKEY")+"&limit=50&vehicleClass=usedcar&ApplicationFilter=Consumer&makeid="+modelid
+	yearid := r.URL.Query().Get("yearid")
+	url := "https://sandbox.api.kbb.com/idws/vehicle/trims?api_key="+os.Getenv("APIKEY")+"&limit=50&vehicleClass=usedcar&ApplicationFilter=Consumer&modelid="+modelid+"&yearId="+yearid
     response, err := http.Get(url)
     if err != nil {
         log.Printf("The HTTP request failed with error %s\n", err)
