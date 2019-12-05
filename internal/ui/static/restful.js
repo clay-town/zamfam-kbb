@@ -46,7 +46,7 @@ function fetchTrims(modelid=122, yearid=1992) {
 
 function fetchVehiclesByYMMT(yearid=1992, makeid=18, modelid=122, trimid=261475) {
 	var request = new XMLHttpRequest();
- 	var url = "/trim?modelid="+modelid+"&yearid="+yearid+"&makeid="+makeid+"&trimid="+trimid;
+ 	var url = "/vehicle?modelid="+modelid+"&yearid="+yearid+"&makeid="+makeid+"&trimid="+trimid;
 
 	request.open('POST', url, true);
  	request.onload = function(){
