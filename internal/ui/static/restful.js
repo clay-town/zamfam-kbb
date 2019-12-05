@@ -29,9 +29,9 @@ function fetchModels(makeid=18) {
   request.send();
 }
 
-function fetchTrims(trimid=261475) {
+function fetchTrims(modelid=122) {
   var request = new XMLHttpRequest();
-  var url = "/trim?trimid="+trimid;
+  var url = "/trim?modelid="+modelid;
 
   request.open('POST', url, true);
   request.onload = function(){
