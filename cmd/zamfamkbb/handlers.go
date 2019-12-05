@@ -10,6 +10,20 @@ import (
 	"github.com/joho/godotenv"
 )
 
+func returnTrims(w http.ResponseWriter, r *http.Request) {
+	godotenv.Load()
+	trimid := r.URL.Query().Get("trimid")
+	url := "https://sandbox.api.kbb.com/idws/vehicle/trims?api_key="+os.Getenv("APIKEY")+"&limit=50&vehicleClass=usedcar&ApplicationFilter=Consumer&makeid="+trimid
+    response, err := http.Get(url)
+    if err != nil {
+        log.Printf("The HTTP request failed with error %s\n", err)
+    } else {
+        data, _ := ioutil.ReadAll(response.Body)
+        log.Println(string(data))
+        json.NewEncoder(w).Encode(string(data))
+    }
+}
+
 func returnModels(w http.ResponseWriter, r *http.Request) {
 	godotenv.Load()
 	makeid := r.URL.Query().Get("makeid")
