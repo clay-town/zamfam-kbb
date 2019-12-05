@@ -43,3 +43,17 @@ function fetchTrims(modelid=122, yearid=1992) {
   }
   request.send();
 }
+
+function fetchVehiclesByYMMT(yearid=1992, makeid=18, modelid=122, trimid=261475) {
+	var request = new XMLHttpRequest();
+ 	var url = "/trim?modelid="+modelid+"&yearid="+yearid;
+
+	request.open('POST', url, true);
+ 	request.onload = function(){
+ 		var data = JSON.parse(this.response);
+ 		console.log(JSON.parse(data));
+    	// access JSON data
+    	// populate drop down menue with makes and hidden IDs
+  	}
+  	request.send();
+}
