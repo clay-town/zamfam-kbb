@@ -28,3 +28,18 @@ function fetchModels(makeid=18) {
   }
   request.send();
 }
+
+function fetchTrims(trimid=261475) {
+  var request = new XMLHttpRequest();
+  var url = "/trim?trimid="+trimid;
+
+  request.open('POST', url, true);
+  request.onload = function(){
+    var data = JSON.parse(this.response);
+    console.log(JSON.parse(data));
+    // access JSON data
+    // populate drop down menue with makes and hidden IDs
+    
+  }
+  request.send();
+}
