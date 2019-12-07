@@ -57,3 +57,18 @@ function fetchVehiclesByYMMT(yearid=1992, makeid=18, modelid=122, trimid=261475)
   	}
   	request.send();
 }
+
+function fetchValue() {
+  var request = new XMLHttpRequest();
+  var url = "https://sandbox.api.kbb.com/idws/vehicle/values?api_key="
+
+request.open('POST', url, true);
+  request.onload = function(){
+    var data = JSON.parse(this.response);
+    console.log(JSON.parse(data));
+      // access JSON data
+      // populate drop down menue with makes and hidden IDs
+    }
+    request.send();
+
+}
