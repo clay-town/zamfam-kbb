@@ -8,7 +8,42 @@ import (
 	"io/ioutil"
 	"os"
 	"github.com/joho/godotenv"
+	"bytes"
 )
+
+func returnValue(w http.ResponseWriter, r *http.Request) {
+	godotenv.Load()
+	vehicleid := r.URL.Query().Get("vehicleid")
+	url := "https://sandbox.api.kbb.com/idws/vehicle/values?api_key="+os.Getenv("APIKEY")
+
+	///url := "https://sandbox.api.kbb.com/idws/vehicle/vehicles?api_key="+os.Getenv("APIKEY")+"&limit=50&vehicleClass=usedcar&ApplicationFilter=Consumer&modelid="+modelid+"&yearid="+yearid+"&makeid="+makeid+"&trimid="+trimid;
+
+ 	var jsonStr = []byte(`{"configuration": { "vehicleId": `+vehicleid+`},"zipCode": "92691"}`)
+	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))
+    req.Header.Set("X-Custom-Header", "myvalue")
+    req.Header.Set("Content-Type", "application/json")
+
+	client := &http.Client{}
+    resp, err := client.Do(req)
+    if err != nil {
+       	panic(err)
+    }
+	defer resp.Body.Close()
+
+    if err != nil {
+        log.Printf("The HTTP request failed with error %s\n", err)
+    } else {
+		log.Println("response Status:", resp.Status)
+    	log.Println("response Headers:", resp.Header)
+		body, _ := ioutil.ReadAll(resp.Body)
+    	log.Println("response Body:", string(body))
+
+		json.NewEncoder(w).Encode(string(body))
+    	// data, _ := ioutil.ReadAll(response.Body)
+     //    log.Println(string(data))
+     //    json.NewEncoder(w).Encode(string(data))
+    }
+}
 
 func returnVehicles(w http.ResponseWriter, r *http.Request) {
 	godotenv.Load()

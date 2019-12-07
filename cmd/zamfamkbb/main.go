@@ -17,7 +17,8 @@ func main() {
 	mux.HandleFunc("/model", returnModels)
 	mux.HandleFunc("/trim", returnTrims)
 	mux.HandleFunc("/vehicle", returnVehicles)
-	
+	mux.HandleFunc("/value", returnValue)
+
 	godotenv.Load()
 	log.Println("Starting server on :"+os.Getenv("PORT"))
 	err := http.ListenAndServe(":"+os.Getenv("PORT"), mux)

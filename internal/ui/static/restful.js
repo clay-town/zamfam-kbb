@@ -6,7 +6,11 @@ function fetchMakes(year=1992) {
   request.open('POST', url, true);
   request.onload = function(){
     var data = JSON.parse(this.response);
-    console.log(JSON.parse(data));
+    data = JSON.parse(data);
+    console.log(data)
+    console.log(data.items)
+
+    
     // access JSON data
     // populate drop down menue with makes and hidden IDs
 
@@ -58,9 +62,9 @@ function fetchVehiclesByYMMT(yearid=1992, makeid=18, modelid=122, trimid=261475)
   	request.send();
 }
 
-function fetchValue() {
+function fetchValue(vehicleid=12155) {
   var request = new XMLHttpRequest();
-  var url = "https://sandbox.api.kbb.com/idws/vehicle/values?api_key="
+  var url = "/value?vehicleid="+vehicleid;
 
 request.open('POST', url, true);
   request.onload = function(){
