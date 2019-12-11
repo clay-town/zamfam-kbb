@@ -9,11 +9,8 @@ function fetchMakes(year=1992) {
     data = JSON.parse(data);
     console.log(data)
     console.log(data.items)
-
-    
     // access JSON data
     // populate drop down menue with makes and hidden IDs
-
   }
   request.send();
 }
@@ -27,8 +24,7 @@ function fetchModels(makeid=18) {
     var data = JSON.parse(this.response);
     console.log(JSON.parse(data));
     // access JSON data
-    // populate drop down menue with makes and hidden IDs
-    
+    // populate drop down menue with makes and hidden IDs  
   }
   request.send();
 }
@@ -42,8 +38,7 @@ function fetchTrims(modelid=122, yearid=1992) {
     var data = JSON.parse(this.response);
     console.log(JSON.parse(data));
     // access JSON data
-    // populate drop down menue with makes and hidden IDs
-    
+    // populate drop down menue with makes and hidden IDs    
   }
   request.send();
 }
@@ -74,5 +69,4 @@ request.open('POST', url, true);
       // populate drop down menue with makes and hidden IDs
     }
     request.send();
-
 }

@@ -16,8 +16,6 @@ func returnValue(w http.ResponseWriter, r *http.Request) {
 	vehicleid := r.URL.Query().Get("vehicleid")
 	url := "https://sandbox.api.kbb.com/idws/vehicle/values?api_key="+os.Getenv("APIKEY")
 
-	///url := "https://sandbox.api.kbb.com/idws/vehicle/vehicles?api_key="+os.Getenv("APIKEY")+"&limit=50&vehicleClass=usedcar&ApplicationFilter=Consumer&modelid="+modelid+"&yearid="+yearid+"&makeid="+makeid+"&trimid="+trimid;
-
  	var jsonStr = []byte(`{"configuration": { "vehicleId": `+vehicleid+`},"zipCode": "92691"}`)
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonStr))
     req.Header.Set("X-Custom-Header", "myvalue")
@@ -52,7 +50,6 @@ func returnVehicles(w http.ResponseWriter, r *http.Request) {
 	makeid := r.URL.Query().Get("makeid")
 	trimid := r.URL.Query().Get("trimid")
 
-	///url := "https://sandbox.api.kbb.com/idws/vehicle/vehicles?api_key="+os.Getenv("APIKEY")+"&limit=50&vehicleClass=usedcar&ApplicationFilter=Consumer&modelid="+modelid+"&yearid="+yearid+"&makeid="+makeid+"&trimid="+trimid;
 	url := "https://sandbox.api.kbb.com/idws/vehicle/vehicles?api_key="+os.Getenv("APIKEY")+"&limit=50&modelid="+modelid+"&yearid="+yearid+"&makeid="+makeid+"&trimid="+trimid;
     response, err := http.Get(url)
     if err != nil {
