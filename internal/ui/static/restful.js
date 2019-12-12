@@ -36,7 +36,7 @@ function fetchMakes(year) {
 
 function fetchModels(year, makeid) {
   var request = new XMLHttpRequest();
-  var url = "/model?makeid="+makeid;
+  var url = "/model?makeid="+makeid+"&year="+year;
   var makeid = makeid
   request.open('POST', url, true);
   request.onload = function(){

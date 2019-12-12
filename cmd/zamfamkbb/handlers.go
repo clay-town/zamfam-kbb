@@ -79,7 +79,8 @@ func returnTrims(w http.ResponseWriter, r *http.Request) {
 func returnModels(w http.ResponseWriter, r *http.Request) {
 	godotenv.Load()
 	makeid := r.URL.Query().Get("makeid")
-	url := "https://sandbox.api.kbb.com/idws/vehicle/models?api_key="+os.Getenv("APIKEY")+"&limit=50&vehicleClass=usedcar&ApplicationFilter=Consumer&makeid="+makeid
+	year := r.URL.Query().Get("year")
+	url := "https://sandbox.api.kbb.com/idws/vehicle/models?api_key="+os.Getenv("APIKEY")+"&limit=50&vehicleClass=usedcar&ApplicationFilter=Consumer&makeid="+makeid+"&yearId="+year
     response, err := http.Get(url)
     if err != nil {
         log.Printf("The HTTP request failed with error %s\n", err)
