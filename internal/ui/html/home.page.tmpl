@@ -2,6 +2,7 @@
 <html lang='en'>
     <head>
         <script type="text/javascript" src="./../static/restful.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <meta charset='utf-8'>
         <title>Home</title>
     </head>
@@ -15,8 +16,23 @@
             <br>
             <div id="trimdd"></div>
             <br>
+            <div>
+                <input id="button" type="submit" name="valButton" value="Click for Value">
+            </div>
+            <br>
             <div id="value"></div>
             <br>
         </main>
     </body>
+    <script type="text/javascript">
+        $(function() {
+      $("#button").click( function()
+           {
+            // rest call to api
+            // redirect the page
+             
+           }
+      );
+});
+    </script>
 </html>

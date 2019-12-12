@@ -102,14 +102,17 @@ request.open('POST', url, true);
     var excellentV = data.prices[2].rangeLow+" - "+data.prices[2].rangeHigh
     var veryGoodV = data.prices[3].rangeLow+" - "+data.prices[3].rangeHigh
 
+
     valueDisplay = "<table>  <tr><td>Fair:      </td> <td>"+fairV+"</td></tr>"+
                             "<tr><td>Good:      </td> <td>"+goodV+"</td></tr>"+
                             "<tr><td>Very Good: </td> <td>"+veryGoodV+"</td></tr>"+
                             "<tr><td>Excellent: </td> <td>"+excellentV+"</td></tr> </table>";
 
+    //document.getElementById("button").innerHTML 
     document.getElementById("value").innerHTML = valueDisplay
         // push value onto screen
         // send info back into manychat....somehow
     }
     request.send();
 }
+
