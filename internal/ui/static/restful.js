@@ -3,16 +3,13 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function populateDropDowns(){
-  var yearmenu = "<select name='yeardd' onchange='fetchMakes(this.value)'>"+
+  var yearMenu = "<select name='yeardd' onchange='fetchMakes(this.value)'>"+
                     "<option value=''>Year</option>";
   for (year=1992; year < 2021; year++){
-    yearmenu = yearmenu+"<option value="+year+">"+year+"</option>";
+    yearMenu = yearMenu+"<option value="+year+">"+year+"</option>";
   }
-  yearmenu = yearmenu+"</select>";
-  document.getElementById("yeardd").innerHTML = yearmenu
-  //document.getElementById()
-
-
+  yearMenu = yearMenu+"</select>";
+  document.getElementById("yeardd").innerHTML = yearMenu
 }
 
 function fetchMakes(year=1992) {
@@ -24,10 +21,20 @@ function fetchMakes(year=1992) {
     var data = JSON.parse(this.response);
     data = JSON.parse(data);
     console.log(data)
-    console.log(data.items)
+    console.log("Make Id:  ",data.items[0].makeId)
+    console.log("Make Name:  ",data.items[0].makeName)
+    console.log(data.items.length)
     // access JSON data
     // populate drop down menue with makes and hidden IDs
-  }
+    var makeMenu = "<select name='yeardd' onchange='fetchModels(this.value)'>"+
+                    "<option value=''>Make</option>";
+    for (x = 0; x < data.items.length; x++){
+      makeMenu = makeMenu+"<option value="+data.items[x].makeId+">"+data.items[x].makeName+"</option>";
+    } 
+    makeMenu = makeMenu+"</select>";
+    document.getElementById("makedd").innerHTML = makeMenu
+    }
+
   request.send();
 }
 
