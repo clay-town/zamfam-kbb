@@ -20,13 +20,9 @@ function fetchMakes(year=1992) {
   request.onload = function(){
     var data = JSON.parse(this.response);
     data = JSON.parse(data);
-    console.log(data)
-    console.log("Make Id:  ",data.items[0].makeId)
-    console.log("Make Name:  ",data.items[0].makeName)
-    console.log(data.items.length)
     // access JSON data
     // populate drop down menue with makes and hidden IDs
-    var makeMenu = "<select name='yeardd' onchange='fetchModels(this.value)'>"+
+    var makeMenu = "<select name='makedd' onchange='fetchModels(this.value)'>"+
                     "<option value=''>Make</option>";
     for (x = 0; x < data.items.length; x++){
       makeMenu = makeMenu+"<option value="+data.items[x].makeId+">"+data.items[x].makeName+"</option>";
@@ -44,10 +40,21 @@ function fetchModels(makeid=18) {
 
   request.open('POST', url, true);
   request.onload = function(){
-    var data = JSON.parse(this.response);
-    console.log(JSON.parse(data));
+    var data = JSON.parse(JSON.parse(this.response));
+    
+    console.log(data.items)
+    //console.log("Make Id:  ",data.items[0].makeId)
+    //console.log("Make Name:  ",data.items[0].makeName)
+    //console.log(data.items.length)
     // access JSON data
     // populate drop down menue with makes and hidden IDs  
+    var modelMenu = "<select name='modeldd' onchange='fetchTrims(this.value)'>"+
+                    "<option value=''>Model</option>";
+    for (x = 0; x < data.items.length; x++){
+      modelMenu = modelMenu+"<option value="+data.items[x].modelId+">"+data.items[x].modelName+"</option>";
+    } 
+    modelMenu = modelMenu+"</select>";
+    document.getElementById("modeldd").innerHTML = modelMenu
   }
   request.send();
 }
