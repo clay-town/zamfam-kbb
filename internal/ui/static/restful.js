@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", function() {
+  populateDropDowns();
+});
+
+function populateDropDowns(){
+  var yearmenu = "<select name='yeardd' onchange='fetchMakes(this.value)'>"+
+                    "<option value=''>Year</option>";
+  for (year=1992; year < 2021; year++){
+    yearmenu = yearmenu+"<option value="+year+">"+year+"</option>";
+  }
+  yearmenu = yearmenu+"</select>";
+  document.getElementById("yeardd").innerHTML = yearmenu
+  //document.getElementById()
+
+
+}
 
 function fetchMakes(year=1992) {
   var request = new XMLHttpRequest();
