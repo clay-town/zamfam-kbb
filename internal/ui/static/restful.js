@@ -101,17 +101,28 @@ request.open('POST', url, true);
     var goodV = data.prices[1].rangeLow + " - "+data.prices[1].rangeHigh
     var excellentV = data.prices[2].rangeLow+" - "+data.prices[2].rangeHigh
     var veryGoodV = data.prices[3].rangeLow+" - "+data.prices[3].rangeHigh
-
+    var nameString = fairV+"|"+goodV+"|"+veryGoodV+"|"+excellentV
 
     valueDisplay = "<table>  <tr><td>Fair:      </td> <td>"+fairV+"</td></tr>"+
                             "<tr><td>Good:      </td> <td>"+goodV+"</td></tr>"+
                             "<tr><td>Very Good: </td> <td>"+veryGoodV+"</td></tr>"+
                             "<tr><td>Excellent: </td> <td>"+excellentV+"</td></tr> </table>";
 
-    //document.getElementById("button").innerHTML 
-    document.getElementById("value").innerHTML = valueDisplay
-        // push value onto screen
-        // send info back into manychat....somehow
+    document.getElementById("buttondiv").innerHTML = "<input id='button' type='submit' name="+nameString+" value='Click for Value'>"
+    $(function() {
+            $("#button").click( function()
+                {
+                    alert("heyyyyy")
+                    var request = new XMLHttpRequest();
+                    var url = "https://hooks.zapier.com/hooks/catch/2550009/o6nnixq?fair="+fairV+"&good="+goodV+"&verygood="+veryGoodV+"&excellent="+excellentV
+                    request.open('POST', url, true);
+                    request.onload = function(){
+
+                    }
+                    request.send();
+                }
+            );
+        });
     }
     request.send();
 }

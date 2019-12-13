@@ -16,29 +16,14 @@
             <br>
             <div id="trimdd"></div>
             <br>
-            <div>
-                <input id="button" type="submit" name="onetwothree" value="Click for Value">
-            </div>
-            <br>
             <div id="value"></div>
+            <br>
+            <div id=buttondiv></div>
             <br>
         </main>
     </body>
     <script type="text/javascript">
-        $(function() {
-            $("#button").click( function()
-                {
-                    alert("heyyyyy")
-                    var request = new XMLHttpRequest();
-                    var url = "https://hooks.zapier.com/hooks/catch/2550009/o6nnixq?value="+$('#button').attr('name')
-                    request.open('POST', url, true);
-                    request.onload = function(){
-
-                    }
-                    request.send();
-                }
-            );
-        });
+        
     </script>
 </html>
 
