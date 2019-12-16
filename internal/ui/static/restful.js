@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
   populateDropDowns();
+  getUrlVars();
 });
+
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    alert("id: ",vars["id"])
+    return vars;
+}
 
 function populateDropDowns(){
   var yearMenu = "<select name='yeardd' onchange='fetchMakes(this.value)'>"+
