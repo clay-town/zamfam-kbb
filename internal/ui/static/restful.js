@@ -8,7 +8,7 @@ function getUrlVars() {
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         vars[key] = value;
     });
-    alert("id: ",vars["id"])
+    alert(vars["id"])
     return vars;
 }
 
