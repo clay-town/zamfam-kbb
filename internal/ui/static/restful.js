@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
   populateDropDowns();
-  getUrlVars();
 });
 
 function getUrlVars() {
@@ -8,7 +7,6 @@ function getUrlVars() {
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
         vars[key] = value;
     });
-    alert(vars["id"])
     return vars;
 }
 
@@ -122,12 +120,13 @@ request.open('POST', url, true);
     $(function() {
             $("#button").click( function()
                 {
-                    alert("heyyyyy")
                     var request = new XMLHttpRequest();
-                    var url = "https://hooks.zapier.com/hooks/catch/2550009/o6nnixq?fair="+fairV+"&good="+goodV+"&verygood="+veryGoodV+"&excellent="+excellentV
+                    var id = getUrlVars()["id"];
+                    var url = "https://hooks.zapier.com/hooks/catch/2550009/o6nnixq?fair="+fairV+"&good="+goodV+"&verygood="+veryGoodV+"&excellent="+excellentV+"&id="+id;
+                 
                     request.open('POST', url, true);
                     request.onload = function(){
-
+                      
                     }
                     request.send();
                 }
