@@ -1,0 +1,85 @@
+Will definitely have these fields: 
+	First_Name
+	Last_Name
+	Live_chat
+
+May have these fields: 
+	Email_Address
+	Phone
+	Zip
+
+May have answers to these questions: 
+currently_working-Q1) "Are you currently disabled and not working?"
+		-Q2 "Will you be able to go back to work within the next 12 months?"
+Worked5-Q3 "Have you worked at least 5 out of the past 10 years?"
+CurrentlyTreating-Q4 "Are you currently being treated by a physician or medical professional for your disability?"
+CurrentlyReceivingSB-Q5 "Are you currently receiving Social Security benefits?"
+
+
+
+age 
+attorney  
+seen_doctor
+has_worked
+currently_working
+CurrentlyReceivingSB
+CurrentlyTreating
+Worked5
+ 	
+first_name
+last_name
+email_address
+phone_home
+zip_code
+notes
+currently_working
+Worked5
+CurrentlyTreating
+CurrentlyReceivingSB
+
+
+From Sheila and Carter: 
+
+Here are the questions that we ask on our lander:
+
+Have you seen a doctor in the last 6 months? #seen_doctor#
+      
+      Yes
+      No
+  
+Are you currently represented by an attorney? #attorney#
+      
+      No
+      Yes
+  
+Are you currently receiving SSDI benefits? #CurrentlyReceivingSB#
+      
+      No
+      Yes
+  
+Are you currently working? #currently_working#
+      
+      No
+      Yes
+  
+Have you worked for at least 5 of the last 10 years? #Worked5#
+      
+      Yes
+      No
+  
+Age #age#
+
+First Name #first_name#
+
+Last Name #last_name#
+
+Email #email_address#
+
+Zip #zip_code#
+
+Telephone #phone_home#
+
+Please describe your situation #description#
+
+
+
