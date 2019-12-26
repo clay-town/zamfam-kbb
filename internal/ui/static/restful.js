@@ -127,9 +127,9 @@ request.open('POST', url, true);
                     request.open('POST', url, true);
                     request.onload = function(){
                       // close window
-                    //window.opener = self;
+                    window.opener = self;
                     //window.close();
-                    //self.close();
+                    self.close();
                     window.open('','_self').close()
                   //  var imgURL = "https://ih1.redbubble.net/image.665615842.5354/mp,840x830,matte,f8f8f8,t-pad,750x1000,f8f8f8.u1.jpg"
                     //var closeURL="https://www.messenger.com/closeWindow/?image_url="+imgURL+"&display_text="+"helloworld"
