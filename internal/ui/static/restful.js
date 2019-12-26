@@ -133,11 +133,9 @@ request.open('POST', url, true);
                     // window.open('','_self').close()
 
                     // var imgURL="https://ih1.redbubble.net/image.665615842.5354/mp,840x830,matte,f8f8f8,t-pad,750x1000,f8f8f8.u1.jpg"
-                    //var closeURL="m.me/FaulknerChevy"
-                    //window.location.replace(closeURL);
-
-                    //  JQuery form of redirect
-                    $(location).attr('href', 'http://stackoverflow.com')
+                    // var closeURL="https://www.messenger.com/t/FaulknerChevy"
+                    // window.location.replace(closeURL);
+                    _a.Finish();
 
                     }
                     request.send();
