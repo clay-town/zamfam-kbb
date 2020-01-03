@@ -124,9 +124,7 @@ request.open('POST', url, true);
                     var id = getUrlVars()["id"];
 
                     var url = "https://hooks.zapier.com/hooks/catch/2550009/o6nnixq?fair="+fairV+"&good="+goodV+"&verygood="+veryGoodV+"&excellent="+excellentV+"&id="+id+
-                    "&vehicleid="+vehicleid+"&makeid="+makedd;
-
-                    document.getElementById("makedd")
+                    "&vehicleid="+vehicleid;
 
                  
                     request.open('POST', url, true);
