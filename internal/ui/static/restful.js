@@ -129,9 +129,6 @@ request.open('POST', url, true);
                  
                     request.open('POST', url, true);
                     request.onload = function(){
-                      var testWindow = web_window.self;
-                      testWindow.opener = window.self
-                      testWindow.close():
 
 
                     //window.opener = self;
