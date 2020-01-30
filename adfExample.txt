@@ -1,0 +1,35 @@
+<adf>
+    <prospect status="new">
+        <requestdate>{{74903112__user__last_interaction}}</requestdate>
+        <customer>
+            <contact>
+                <name part="last" type="individual">Last {{74903112__user__last_name}},</name>
+                <name part="first" type="individual">First {{74903112__user__first_name}}</name>
+                <name part="full" type="individual">Full {{74903112__user__name}} </name>
+                <email> {{74903112__user__custom_fields__email}} </email>
+                <phone> {{74903112__user__custom_fields__phoneNumber}} </phone>
+            </contact>
+        </customer>
+        <vehicle>
+            <make> {{74905973__makeName}} </make>
+            <model>{{74905973__generationName}} </model>
+            <year> {{74905973__yearId}}</year>
+            <trim>{{74905973__oemBodyStyle}}</trim>
+            <conditionExcellent> Excellent: {{73711902__querystring__excellent}} </conditionExcellent>
+            <conditionVeryGood> Very good:  {{73711902__querystring__verygood}} </conditionVeryGood>
+            <conditionGood> Good: {{73711902__querystring__good}} </conditionGood>
+            <conditionFair> Fair: {{73711902__querystring__fair}} </conditionFair>
+        </vehicle>
+        <vendor>
+            <vendorname> Faulkner Chevrolet </vendorname>
+            <contact>
+                <name part="full" type="business">Faulkner Chevrolet of Lancaster </name>
+                <phone> (717) 299-0961 </phone>
+            </contact>
+        </vendor>
+        <provider>
+            <name part="full" type="business">Mazama Media Operations</name>
+            <service> Mazama Media Chat bot </service>
+        </provider>
+    </prospect>
+</adf>
