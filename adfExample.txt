@@ -1,24 +1,26 @@
 <adf>
     <prospect status="new">
-        <requestdate>{{74903112__user__last_interaction}}</requestdate>
+        <requestdate>{{77261789__last_interaction}}</requestdate>
         <customer>
             <contact>
-                <name part="last" type="individual">Last {{74903112__user__last_name}},</name>
-                <name part="first" type="individual">First {{74903112__user__first_name}}</name>
-                <name part="full" type="individual">Full {{74903112__user__name}} </name>
-                <email> {{74903112__user__custom_fields__email}} </email>
-                <phone> {{74903112__user__custom_fields__phoneNumber}} </phone>
+                <name part="first" type="individual">Last {{77261789__first_name}},</name>
+                <name part="last" type="individual">First {{77261789__last_name}}</name>
+                <name part="full" type="individual">Full {{77261789__name}} </name>
+                <email> {{77261789__custom_fields__email}} </email>
+                <phone> {{77261789__custom_fields__phoneNumber}} </phone>
+                <contactPreference>{{77261789__custom_fields__communicationPreference}} </contactPreference>
+                <contactTime>{{77261789__custom_fields__contactTime}} </contactTime>
             </contact>
         </customer>
         <vehicle>
-            <make> {{74905973__makeName}} </make>
-            <model>{{74905973__generationName}} </model>
-            <year> {{74905973__yearId}}</year>
-            <trim>{{74905973__oemBodyStyle}}</trim>
-            <conditionExcellent> Excellent: {{73711902__querystring__excellent}} </conditionExcellent>
-            <conditionVeryGood> Very good:  {{73711902__querystring__verygood}} </conditionVeryGood>
-            <conditionGood> Good: {{73711902__querystring__good}} </conditionGood>
-            <conditionFair> Fair: {{73711902__querystring__fair}} </conditionFair>
+            <make> {{77261789__custom_fields__make}}</make>
+            <model> {{77261789__custom_fields__model}}</model>
+            <year> {{77261789__custom_fields__Year}}</year>
+            <trim>{{77261789__custom_fields__trim}}</trim>
+            <conditionExcellent> Excellent: {{77261789__custom_fields__excellent}} </conditionExcellent>
+            <conditionVeryGood> Very good:  {{77261789__custom_fields__verygood}} </conditionVeryGood>
+            <conditionGood> Good: {{77261789__custom_fields__good}} </conditionGood>
+            <conditionFair> Fair: {{77261789__custom_fields__fair}} </conditionFair>
         </vehicle>
         <vendor>
             <vendorname> Faulkner Chevrolet </vendorname>

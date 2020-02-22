@@ -105,10 +105,10 @@ request.open('POST', url, true);
   request.onload = function(){
     var data = JSON.parse(JSON.parse(this.response));
     console.log(data);
-    var fairV = data.prices[0].rangeLow + " - "+data.prices[0].rangeHigh
-    var goodV = data.prices[1].rangeLow + " - "+data.prices[1].rangeHigh
-    var excellentV = data.prices[2].rangeLow+" - "+data.prices[2].rangeHigh
-    var veryGoodV = data.prices[3].rangeLow+" - "+data.prices[3].rangeHigh
+    var fairV = "$" + data.prices[0].rangeLow + " - $"+data.prices[0].rangeHigh
+    var goodV = "$" + data.prices[1].rangeLow + " - $"+data.prices[1].rangeHigh
+    var excellentV = "$" + data.prices[2].rangeLow+" - $"+data.prices[2].rangeHigh
+    var veryGoodV = "$" + data.prices[3].rangeLow+" - $"+data.prices[3].rangeHigh
     var nameString = fairV+"|"+goodV+"|"+veryGoodV+"|"+excellentV
 
     valueDisplay = "<table>  <tr><td>Fair:      </td> <td>"+fairV+"</td></tr>"+
